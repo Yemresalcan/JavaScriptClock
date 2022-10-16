@@ -13,10 +13,20 @@ function showClock() {
     let h = moment.getHours()
     let s = moment.getMinutes()
     let sn = moment.getSeconds()
+    let days = [
+        "Pazar",
+        "Pazartesi",
+        "Salı",
+        "Çarşamba",
+        "Perşembe",
+        "Cuma",
+        "Cumartesi",
+      ];
 
     let showTime = document.querySelector("#myClock")
-    showTime.innerHTML= h + ":" + s + ":" + sn     
+    showTime.innerHTML= h + ":" + s + ":" + sn + days[moment.getDay()];   
 
 }   
 
 let actual = setInterval(showClock,1000)
+
